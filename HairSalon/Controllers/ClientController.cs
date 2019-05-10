@@ -11,8 +11,8 @@ namespace HairSalon.Controllers
     [HttpGet("Stylist/{id}/Client")]
     public ActionResult Index(int id)
     {
-      List<Client> allClients = Client.FindCuisineList(id);
-      return View(allClient);
+      List<Client> allClients = Client.FindStylistClientList(id);
+      return View(allClients);
     }
 
     [HttpGet("/Client/new")]
