@@ -9,21 +9,15 @@ namespace HairSalon.Controllers
   public class ClientController : Controller
   {
 
-    // [HttpGet("Stylist/{id}/Client")]
-    // public ActionResult Index(int id)
-    // {
-    //   List<Client> allClients = Client.FindStylistClientList(id);
-    //   return View(allClients);
-    // }
-
     [HttpGet("Stylist/{id}/Client")]
-    public IActionResult Index(int id)
+    public ActionResult Index(int id)
     {
-      StylistBioClientViewModel AddStylistBioClientView = new StylistBioClientViewModel();
-      AddStylistBioClientView.Stylist = db.GetAll();
-      AddStylistBioClientView.Clients = db.FindStylistClientList(id);
-      return View(AddStylistBioClientView);
+      Stylist ThisStylist = Stylist.Find(id);
+      Console.WriteLine(ThisStylist.Name);
+      List<Client> allClients = Client.FindStylistClientList(id);
+      return View(allClients);
     }
+
 
     [HttpGet("/Client/new")]
     public ActionResult New()

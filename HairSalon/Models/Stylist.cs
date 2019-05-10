@@ -131,9 +131,4 @@ namespace HairSalon.Models
       return foundStylist;
     }
   }
-  public class StylistBioClientViewModel
-  {
-    public Stylist Stylists {get; set;}
-    public Client Clients {get; set;}
-  }
 }
