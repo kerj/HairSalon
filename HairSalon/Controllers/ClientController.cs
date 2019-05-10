@@ -3,16 +3,26 @@ using Microsoft.AspNetCore.Mvc;
 using HairSalon.Models;
 using System;
 
+
 namespace HairSalon.Controllers
 {
   public class ClientController : Controller
   {
 
+    // [HttpGet("Stylist/{id}/Client")]
+    // public ActionResult Index(int id)
+    // {
+    //   List<Client> allClients = Client.FindStylistClientList(id);
+    //   return View(allClients);
+    // }
+
     [HttpGet("Stylist/{id}/Client")]
-    public ActionResult Index(int id)
+    public IActionResult Index(int id)
     {
-      List<Client> allClients = Client.FindStylistClientList(id);
-      return View(allClients);
+      StylistBioClientViewModel AddStylistBioClientView = new StylistBioClientViewModel();
+      AddStylistBioClientView.Stylist = db.GetAll();
+      AddStylistBioClientView.Clients = db.FindStylistClientList(id);
+      return View(AddStylistBioClientView);
     }
 
     [HttpGet("/Client/new")]

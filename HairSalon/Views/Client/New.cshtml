@@ -1,0 +1,31 @@
+@using HairSalon.Models;
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>More Kaiju!</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="~/css/styles.css">
+  </head>
+  <body>
+    <h1>A Monster Appears...</h1>
+
+    <form action="/client" method="post">
+      <label for="name">What is the name:</label>
+      <input id="name" name="name" type="text"><br>
+
+      <label for="stylistId">Add to which stylist:</label>
+
+      @foreach (Stylist stylist in @Model.Stylist)
+      {
+        <input type="radio" name="@stylist.Name" value="@stylist.Id"> @stylist.Name<br>
+      }
+
+
+      <button type="submit">Submit</button>
+    </form>
+
+  </body>
+</html>
