@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 10, 2019 at 04:40 PM
+-- Generation Time: May 11, 2019 at 12:02 AM
 -- Server version: 5.7.24-log
 -- PHP Version: 7.2.10
 
@@ -47,6 +47,27 @@ INSERT INTO `client` (`Id`, `StylistId`, `Name`) VALUES
 (6, 3, 'Mothra'),
 (7, 1, 'Rodan');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stylist`
+--
+
+CREATE TABLE `stylist` (
+  `Id` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Bio` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `stylist`
+--
+
+INSERT INTO `stylist` (`Id`, `Name`, `Bio`) VALUES
+(1, 'Godzilla', 'Both the terror and protector of Tokyo'),
+(2, 'King Ghidorah', 'Legendary 9-Headed Dragon of Kyushu Region; Awoken prematurely by thousands of years, thus only three heads are present'),
+(3, 'Mega-Godzilla', 'Using the DNA from Godzillas own body, a man made half robot half Godzilla hybrid.');
+
 --
 -- Indexes for dumped tables
 --
@@ -59,6 +80,12 @@ ALTER TABLE `client`
   ADD KEY `ClientStylistReference` (`StylistId`);
 
 --
+-- Indexes for table `stylist`
+--
+ALTER TABLE `stylist`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -67,6 +94,12 @@ ALTER TABLE `client`
 --
 ALTER TABLE `client`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `stylist`
+--
+ALTER TABLE `stylist`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
