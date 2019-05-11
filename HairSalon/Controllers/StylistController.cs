@@ -37,6 +37,8 @@ namespace HairSalon.Controllers
       return View("Index", allStylists);
     }
 
+
+
     // [HttpPost("/stylist/{id}/delete")]
     // public ActionResult Destroy(int id)
     // {

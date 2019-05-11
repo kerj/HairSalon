@@ -18,12 +18,20 @@ namespace HairSalon.Controllers
       return View(allClients);
     }
 
-
-    [HttpGet("/Client/new")]
-    public ActionResult New()
+    [HttpGet("/Stylist/{stylistId}/Client/new")]
+    public ActionResult New(int stylistId)
     {
-      return View();
+      Stylist stylist = Stylist.Find(stylistId);
+      return View(stylist);
     }
+
+    // [HttpGet("/Client/new")]
+    // public ActionResult New()
+    // {
+    //   return View();
+    // }
+
+
     // [HttpGet("/restaurant/{id}")]
     // public ActionResult Show()
     // {
