@@ -12,37 +12,29 @@ namespace HairSalon.Controllers
     [HttpGet("Stylist/{id}/Client")]
     public ActionResult Index(int id)
     {
-      Stylist ThisStylist = Stylist.Find(id);
-      Console.WriteLine(ThisStylist.Name);
-      List<Client> allClients = Client.FindStylistClientList(id);
-      return View(allClients);
+      StylistClientListViewModel stylistClientListViewModel = new StylistClientListViewModel();
+      stylistClientListViewModel.Clients =  Client.FindStylistClientList(id);
+      stylistClientListViewModel.StylistId = id;
+      return View(stylistClientListViewModel);
     }
 
-    [HttpGet("/Stylist/{stylistId}/Client/new")]
-    public ActionResult New(int stylistId)
+    [HttpGet("/Stylist/{id}/Client/NewClient")]
+    public ActionResult NewClient(int id)
     {
-      Stylist stylist = Stylist.Find(stylistId);
-      return View(stylist);
+      Stylist clientStylist = Stylist.Find(id);
+      return View(clientStylist);
     }
 
-    // [HttpGet("/Client/new")]
-    // public ActionResult New()
-    // {
-    //   return View();
-    // }
-
-
-    // [HttpGet("/restaurant/{id}")]
-    // public ActionResult Show()
-    // {
-    // }
-
-    // [HttpGet("cuisine/{id}/restaurant")]
-    // public ActionResult index(int id)
-    // {
-    //   List<Restaurant> allRestaurants = Restaurant.GetCuisineList(id);
-    //   return View(allRestaurants);
-    // }
+    [HttpPost("/Stylist/{stylistId}/Client")]
+    public ActionResult Index(string name, int stylistId)
+    {
+      Client newClient = new Client(name, stylistId);
+      newClient.Save();
+      StylistClientListViewModel stylistClientListViewModel = new StylistClientListViewModel();
+      stylistClientListViewModel.Clients =  Client.FindStylistClientList(stylistId);
+      stylistClientListViewModel.StylistId = stylistId;
+      return View(stylistClientListViewModel);
+    }
 
     // [HttpPost("/cuisine/{id}/delete")]
     // public ActionResult Destroy(int id)

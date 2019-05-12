@@ -22,6 +22,6 @@ D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netc
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\HairSalon.pdb
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\HairSalon.csproj.CopyComplete
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Client\Index.g.cshtml.cs
-D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Client\New.g.cshtml.cs
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Stylist\Index.g.cshtml.cs
-D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Stylist\New.g.cshtml.cs
+D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Client\NewClient.g.cshtml.cs
+D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Stylist\NewStylist.g.cshtml.cs
