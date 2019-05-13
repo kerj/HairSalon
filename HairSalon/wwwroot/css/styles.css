@@ -1,0 +1,18 @@
+body {
+  background-color: darkgrey;
+}
+
+a:hover {
+  text-transform: uppercase;
+  color: purple;
+}
+
+li a, li {
+
+  font-size: 200%;
+
+}
+
+p {
+
+}
