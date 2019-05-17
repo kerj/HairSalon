@@ -1,6 +1,5 @@
 @using HairSalon.Models;
 
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,24 +9,17 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <h1 class="jumbotron">A Monster Appears...</h1>
-
-    <form action="/Stylist" method="post">
+    <h1 class="jumbotron">A Monster Appears...For A Haircut</h1>
+    <h1>@Model</h1>
+    <form action="/Stylist/@Model.Id/Client" method="post">
       <label for="name">What is the name:</label>
       <input id="name" name="name" type="text"><br>
 
-      <label for="bio">What is the bio:(255 Character Max)</label>
-      <input id="bio" name="bio" type="text"><br>
-
-
-
-
-
-      <label for="specialty">What is their specialty?</label>
-      <input id="specialty" name="specialty" type="text"><br>
 
       <button class="btn-danger" type="submit">Submit</button>
     </form>
-    <a href='/Stylist'>Back to the list of Kaiju stylists</a><br>
+    <a href='/Stylist'>Back to Stylists Page</a><br>
+
+
   </body>
 </html>
