@@ -11,10 +11,9 @@
   <body>
     <h1 class="jumbotron">A Monster Appears...For A Haircut</h1>
 
-    <form action="/Stylist/@Model.Id/Client" method="post">
+    <form action="/Client" method="post">
       <label for="name">What is the name:</label>
       <input id="name" name="name" type="text"><br>
-      <input id="stylistId" name="stylistId" type="hidden" value="@Model.SelectedStylist.Id">
 
       <button class="btn-danger" type="submit">Submit</button>
     </form>

@@ -7,7 +7,7 @@ namespace HairSalon.Models
   public class StylistClientListViewModel
   {
     public List<Client> Clients { get; set; }
-    public int StylistId  { get; set; }
+    public Stylist SelectedStylist { get; set; }
   }
 
 }

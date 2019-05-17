@@ -28,3 +28,5 @@ D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netc
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Stylist\Show.g.cshtml.cs
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Specialty\Index.g.cshtml.cs
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Specialty\NewSpecialty.g.cshtml.cs
+D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Client\ClientIndex.g.cshtml.cs
+D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Client\New.g.cshtml.cs
