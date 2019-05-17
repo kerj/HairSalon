@@ -13,5 +13,69 @@ namespace HairSalon.Models
       Id = specialtyId;
       SpecialtyDescription = specialtyDescription;
     }
+
+    public override bool Equals(System.Object otherSpecialty)
+    {
+      if (!(otherSpecialty is Specialty))
+      {
+        return false;
+      }
+      else
+      {
+        Specialty newSpecialty = (Specialty) otherSpecialty;
+        bool idEquality = (this.Id == newSpecialty.Id);
+        bool specialtyEquality = (this.SpecialtyDescription == newSpecialty.SpecialtyDescription);
+        return (idEquality && specialtyEquality);
+      }
+    }
+
+    public static List<Specialty> GetAll()
+    {
+      List<Specialty> allSpecialties = new List<Specialty> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM specialty;";
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+
+      while(rdr.Read())
+      {
+        int id = rdr.GetInt32(0);
+        string specialtyDescription = rdr.GetString(1);
+
+        Specialty newSpecialty = new Specialty(specialtyDescription, id);
+        allSpecialties.Add(newSpecialty);
+      }
+      conn.Close();
+
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allSpecialties;
+    }
+
+    public void Save()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO `specialty` (`specialtyDescription`) VALUES (@specialtyDescription);";
+
+      MySqlParameter specialtyDescription = new MySqlParameter();
+      specialtyDescription.ParameterName = "@specialtyDescription";
+      specialtyDescription.Value = this.SpecialtyDescription;
+
+      cmd.Parameters.Add(specialtyDescription);
+      cmd.ExecuteNonQuery();
+      Id = (int) cmd.LastInsertedId; // <-- This line is new!
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+
   }
 }

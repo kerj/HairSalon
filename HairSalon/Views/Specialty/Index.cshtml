@@ -9,20 +9,28 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body class="container">
-    <h1 class="jumbotron">Details on @Model.Name</h1>
-    <ul>
-      <li>Their Bio: @Model.Bio</li>
-      <li>Their Specialty: @Model.Specialty</li>
-      <li><a href='/Stylist/@Model.Id/client'>View Clients</li>
-    </ul>
+    <h1 class="jumbotron">Checkout The Special Powers!</h1>
 
+    <ul>
+    @if (Model.Count == 0)
+    {
+      <p>There are no Powers in your list yet :(!</p>
+    }
+    @if(Model.Count != 0)
+    {
+
+      @foreach (Specialty specialty in Model)
+      {
+
+        <li>@specialty.SpecialtyDescription</li>
+
+      }
+
+    }
+    </ul>
     <a href='/'>Go Home</a><br>
     <a href='/Stylist/NewStylist'>Add a Kaiju Stylist.</a><br>
-    <a href='/Specialty'>View List of Specialties.</a><br>
-
-    <form action='/Stylist/@Model.Id/delete' method="post">
-      <button type='submit'>Delete Item</button>
-    </form>
+    <a href='/Specialty/NewSpecialty'>Add a new Power.</a>
 
     </html>
   </body>
