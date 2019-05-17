@@ -10,8 +10,8 @@
   </head>
   <body>
     <h1 class="jumbotron">A Monster Appears...For A Haircut</h1>
-    <h1>@Model</h1>
-    <form action="/Stylist/@Model.Id/Client" method="post">
+    <h1>Edit @Model.Clients</h1>
+    <form action="/Client" method="post">
       <label for="name">What is the name:</label>
       <input id="name" name="name" type="text"><br>
 

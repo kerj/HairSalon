@@ -14,7 +14,7 @@
     <form action="/Stylist/@Model.Id/Client" method="post">
       <label for="name">What is the name:</label>
       <input id="name" name="name" type="text"><br>
-      <input id="stylistId" name="stylistId" type="hidden" value="@Model.SelectedStylist.Id">
+      <input id="stylistId" name="stylistId" type="hidden" value="@Model.Id">
 
       <button class="btn-danger" type="submit">Submit</button>
     </form>
