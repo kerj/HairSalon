@@ -9,11 +9,13 @@ namespace HairSalon.Models
     public int Id {get; set;}
     public string Name {get; set;}
     public string Bio {get; set;}
+    public string Specialty {get; set;}
 
-    public Stylist (string name, string bio, int id = 0) {
+    public Stylist (string name, string bio, string specialty, int id = 0) {
       Id = id;
       Name = name;
       Bio = bio;
+      Specialty = specialty;
     }
 
     public static List<Stylist> GetAll()
@@ -30,8 +32,9 @@ namespace HairSalon.Models
         int id = rdr.GetInt32(0);
         string name = rdr.GetString(1);
         string bio = rdr.GetString(2);
+        string specialty = rdr.GetString(3);
 
-        Stylist newStylist = new Stylist(name, bio, id);
+        Stylist newStylist = new Stylist(name, bio, specialty, id);
         allStylists.Add(newStylist);
       }
       conn.Close();
@@ -83,7 +86,8 @@ namespace HairSalon.Models
         bool idEquality = (this.Id == newStylist.Id);
         bool nameEquality = (this.Name == newStylist.Name);
         bool bioEquality = (this.Bio == newStylist.Bio);
-        return (idEquality && nameEquality && bioEquality);
+        bool specialtyEquality = (this.Specialty == newStylist.Specialty);
+        return (idEquality && nameEquality && bioEquality && specialtyEquality);
       }
     }
 
@@ -102,8 +106,13 @@ namespace HairSalon.Models
       bio.ParameterName = "@StylistBio";
       bio.Value = this.Bio;
 
+      MySqlParameter specialty = new MySqlParameter();
+      specialty.ParameterName = "@StylistSpecialty";
+      specialty.Value = this.Specialty;
+
       cmd.Parameters.Add(name);
       cmd.Parameters.Add(bio);
+      cmd.Parameters.Add(specialty);
       cmd.ExecuteNonQuery();
       Id = (int) cmd.LastInsertedId;
       // more logic will go here in a moment
@@ -128,15 +137,17 @@ namespace HairSalon.Models
       string stylistName = "";
       string stylistBio = "";
       int stylistId = 0;
+      string stylistSpecialty = "";
 
       while (rdr.Read())
       {
         stylistId = rdr.GetInt32(0);
         stylistName = rdr.GetString(1);
         stylistBio = rdr.GetString(2);
+        stylistSpecialty = rdr.GetString(3);
       }
 
-      Stylist foundStylist = new Stylist(stylistName, stylistBio, stylistId);
+      Stylist foundStylist = new Stylist(stylistName, stylistBio, stylistSpecialty, stylistId);
       conn.Close();
       if (conn != null)
       {

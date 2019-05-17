@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\TheKerj\\desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\HairSalon.csproj": {}
+    "D:\\Users\\TheKerj\\Desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\HairSalon.csproj": {}
   },
   "projects": {
-    "D:\\Users\\TheKerj\\desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\HairSalon.csproj": {
+    "D:\\Users\\TheKerj\\Desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\HairSalon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\TheKerj\\desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\HairSalon.csproj",
+        "projectUniqueName": "D:\\Users\\TheKerj\\Desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\HairSalon.csproj",
         "projectName": "HairSalon",
-        "projectPath": "D:\\Users\\TheKerj\\desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\HairSalon.csproj",
+        "projectPath": "D:\\Users\\TheKerj\\Desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\HairSalon.csproj",
         "packagesPath": "D:\\Users\\TheKerj\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\TheKerj\\desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\obj\\",
+        "outputPath": "D:\\Users\\TheKerj\\Desktop\\epicodus19\\HairSalon.Solutions\\HairSalon\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
