@@ -57,6 +57,20 @@ namespace HairSalon.Models
       }
     }
 
+    public static void DeleteStylist(int id)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM `stylist` WHERE id = @thisId;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
     public override bool Equals(System.Object otherStylist)
     {
       if (!(otherStylist is Stylist))

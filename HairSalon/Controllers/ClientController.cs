@@ -36,11 +36,11 @@ namespace HairSalon.Controllers
       return View(stylistClientListViewModel);
     }
 
-    // [HttpPost("/cuisine/{id}/delete")]
-    // public ActionResult Destroy(int id)
-    // {
-    //   Cuisine.RemoveHellBeast(id);
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost("/Stylist/{id}/delete")]
+    public ActionResult Destroy(int id)
+    {
+      Stylist.DeleteStylist(id);
+      return RedirectToAction("Index");
+    }
   }
 }
