@@ -36,11 +36,6 @@ namespace HairSalon.Controllers
       return View(stylistClientListViewModel);
     }
 
-    [HttpPost("/Stylist/{id}/delete")]
-    public ActionResult Destroy(int id)
-    {
-      Stylist.DeleteStylist(id);
-      return RedirectToAction("Index");
-    }
+
   }
 }

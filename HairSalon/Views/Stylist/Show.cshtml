@@ -17,8 +17,11 @@
     </ul>
 
     <a href='/'>Go Home</a><br>
-    <a href='/Stylist/NewStylist'>Add a Kaiju Stylist.</a>
-    <a href="#">Delete this Stylist.</a>
+    <a href='/Stylist/NewStylist'>Add a Kaiju Stylist.</a><br>
+    
+    <form action='/Stylist/@Model.Id/delete' method="post">
+      <button type='submit'>Delete Item</button>
+    </form>
 
     </html>
   </body>

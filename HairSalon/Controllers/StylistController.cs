@@ -18,7 +18,7 @@ namespace HairSalon.Controllers
     [HttpGet("/Stylist/{id}")]
     public ActionResult Index(int id)
     {
-      return View("~/Client/", id);
+      return View();
     }
 
     [HttpGet("/Stylist/NewStylist")]
@@ -46,12 +46,14 @@ namespace HairSalon.Controllers
     }
 
 
-    // [HttpPost("/stylist/{id}/delete")]
-    // public ActionResult Destroy(int id)
-    // {
-    //   Stylist.RemoveClient(id);
-    //   return RedirectToAction("Index");
-    // }
+
+    [HttpPost("/stylist/{id}/delete")]
+    public ActionResult Delete(int id)
+    {
+      Stylist selectedStylist = Stylist.Find(id);
+      selectedStylist.DeleteStylist();
+      return RedirectToAction("Index");
+    }
   }
 }
 
