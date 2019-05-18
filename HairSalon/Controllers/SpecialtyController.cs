@@ -29,5 +29,13 @@ namespace HairSalon.Controllers
       List<Specialty> allSpecialties = Specialty.GetAll();
       return View("Index", allSpecialties);
     }
+
+    [HttpGet("/Specialty/{stylistId}")]
+    public ActionResult Show()
+    {
+      StylistClientListViewModel stylistClientListViewModel = new StylistClientListViewModel();
+      List<Specialty> allSpecialties = Specialty.GetAll();
+      return View();
+    }
   }
 }

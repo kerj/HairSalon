@@ -36,7 +36,7 @@ namespace HairSalon.Controllers
     public ActionResult Index(int id)
     {
       StylistClientListViewModel stylistClientListViewModel = new StylistClientListViewModel();
-      stylistClientListViewModel.Clients =  Client.FindStylistClientList(id);
+      stylistClientListViewModel.Clients = Client.FindStylistClientList(id);
       Stylist selectedStylist = Stylist.Find(id);
       stylistClientListViewModel.SelectedStylist = selectedStylist;
       return View(stylistClientListViewModel);

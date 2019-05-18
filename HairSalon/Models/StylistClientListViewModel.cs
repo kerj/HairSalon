@@ -8,6 +8,7 @@ namespace HairSalon.Models
   {
     public List<Client> Clients { get; set; }
     public Stylist SelectedStylist { get; set; }
+    public List<Specialty> Specialties { get; set; }
   }
 
 }

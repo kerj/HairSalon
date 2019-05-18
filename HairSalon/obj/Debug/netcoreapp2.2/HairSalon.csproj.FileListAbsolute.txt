@@ -32,3 +32,4 @@ D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netc
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Client\New.g.cshtml.cs
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Client\Edit.g.cshtml.cs
 D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Client\Show.g.cshtml.cs
+D:\Users\TheKerj\desktop\epicodus19\HairSalon.Solutions\HairSalon\obj\Debug\netcoreapp2.2\Razor\Views\Specialty\Show.g.cshtml.cs

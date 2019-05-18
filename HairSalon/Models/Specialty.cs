@@ -76,6 +76,37 @@ namespace HairSalon.Models
       }
     }
 
+    public static List<Specialty> FindStylistSpecialtyList(int id)
+    {
+      List<Specialty> stylistSpecialties = new List<Specialty> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand getStylistSpecialtyList = conn.CreateCommand() as MySqlCommand;
+      getStylistSpecialtyList.CommandText =
+       @"SELECT *
+        FROM stylist
+        JOIN stylist_specialty
+          ON (stylist.Id = stylist_specialty.stylistId)
+        JOIN specialty
+          ON (stylist_specialty.specialtyId = specialty.Id)
+        WHERE stylist.Id ='" + id +"';";
+      MySqlDataReader rdr = getStylistSpecialtyList.ExecuteReader() as MySqlDataReader;
+
+      while(rdr.Read())
+      {
+        int specialtyId = rdr.GetInt32(0);
+        string specialtyDescription = rdr.GetString(1);
+
+        Specialty newSpecialty = new Specialty(specialtyDescription, specialtyId);
+        stylistSpecialties.Add(newSpecialty);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return stylistSpecialties;
+    }
 
   }
 }
