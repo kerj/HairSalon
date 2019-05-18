@@ -71,7 +71,15 @@ namespace HairSalon.Controllers
       return View(stylistClientListViewModel);
     }
 
-    [HttpPost("/client")]
+    [HttpGet("/client/{clientId}")]
+    public ActionResult Show(int clientId)
+    {
+      List<Client> viewClients = Client.GetAll();
+      Client selectedClient = viewClients.Find(clientId);
+      return View(selectedClient);
+    }
+
+    [HttpPost("/client/{clientId}")]
     public ActionResult Update(int stylsitId, int clientId, string name)
     {
       Client client = Client.Find(clientId);

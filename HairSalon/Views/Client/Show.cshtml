@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>List of Stylists</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="~/css/styles.css">
+  </head>
+  <body class="container">
+    <h1 class="jumbotron">Details on @Model.Name</h1>
+    <ul>
+      <li>Their Name: @Model.Name</li>
+      <li>Their Stylist: @Model.SelectedStylist</li>
+    </ul>
+
+    <a href='/'>Go Home</a><br>
+    <form action='/Client/@Model.Id/delete' method="post">
+      <button type='submit'>Delete Item</button>
+    </form>
+
+    </html>
+  </body>
