@@ -65,7 +65,7 @@ namespace HairSalon.Controllers
     public ActionResult Edit(int clientId, int stylistId = 0)
     {
       StylistClientListViewModel stylistClientListViewModel = new StylistClientListViewModel();
-      stylistClientListViewModel.Clients =  Client.FindStylistClientList(clientId);
+      stylistClientListViewModel.Clients = Client.FindStylistClientList(clientId);
       stylistClientListViewModel.SelectedStylist = Stylist.Find(stylistId);
 
       return View(stylistClientListViewModel);
@@ -74,13 +74,17 @@ namespace HairSalon.Controllers
     [HttpGet("/client/{clientId}")]
     public ActionResult Show(int clientId)
     {
-      List<Client> viewClients = Client.GetAll();
-      Client selectedClient = viewClients.Find(clientId);
-      return View(selectedClient);
+      StylistClientListViewModel stylistClientListViewModel = new StylistClientListViewModel();
+      Client selectedClient = Client.Find(clientId);
+      stylistClientListViewModel.Clients = new List<Client>();
+      stylistClientListViewModel.Clients.Add(selectedClient);
+      stylistClientListViewModel.SelectedStylist = Stylist.Find(selectedClient.StylistId);
+
+      return View(stylistClientListViewModel);
     }
 
     [HttpPost("/client/{clientId}")]
-    public ActionResult Update(int stylsitId, int clientId, string name)
+    public ActionResult Update(int stylistId, int clientId, string name)
     {
       Client client = Client.Find(clientId);
       client.Edit(name);

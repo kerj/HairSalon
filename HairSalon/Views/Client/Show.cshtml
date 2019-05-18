@@ -1,3 +1,5 @@
+@using HairSalon.Models;
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,14 +9,14 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body class="container">
-    <h1 class="jumbotron">Details on @Model.Name</h1>
+    <h1 class="jumbotron">Details on @Model.Clients[0].Name</h1>
     <ul>
-      <li>Their Name: @Model.Name</li>
-      <li>Their Stylist: @Model.SelectedStylist</li>
+      <li>Their Name: @Model.Clients[0].Name</li>
+      <li>Their Stylist: @Model.SelectedStylist.Name</li>
     </ul>
 
     <a href='/'>Go Home</a><br>
-    <form action='/Client/@Model.Id/delete' method="post">
+    <form action='/Client/@Model/delete' method="post">
       <button type='submit'>Delete Item</button>
     </form>
 
